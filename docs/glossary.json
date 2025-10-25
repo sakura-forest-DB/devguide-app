@@ -1,0 +1,836 @@
+{
+  "terms": [
+    {
+      "term": "CLI",
+      "reading": "シーエルアイ",
+      "category": "ターミナル",
+      "description": "Command Line Interface（コマンドラインインターフェース）の略。黒い画面（ターミナル）で文字を打って操作すること。",
+      "example": "npm install などのコマンドを打つのがCLI操作",
+      "relatedTerms": ["ターミナル", "コマンド", "シェル"]
+    },
+    {
+      "term": "ターミナル",
+      "reading": "たーみなる",
+      "category": "ターミナル",
+      "description": "コマンドを入力して実行するための黒い画面。Macでは「ターミナル.app」、Windowsでは「コマンドプロンプト」や「PowerShell」が該当。",
+      "example": "ターミナルを開いて「ls」と打つとファイル一覧が見れる",
+      "relatedTerms": ["CLI", "シェル", "コマンドプロンプト"]
+    },
+    {
+      "term": "Git",
+      "reading": "ギット",
+      "category": "バージョン管理",
+      "description": "ファイルの変更履歴を記録・管理するツール。誰がいつ何を変更したかを追跡できる。",
+      "example": "git commit -m \"機能追加\" でコードの変更を記録",
+      "relatedTerms": ["GitHub", "コミット", "プッシュ", "プル"]
+    },
+    {
+      "term": "GitHub",
+      "reading": "ギットハブ",
+      "category": "バージョン管理",
+      "description": "Gitで管理しているコードをオンラインで保存・共有できるサービス。コードのSNSのようなもの。",
+      "example": "自分のコードをGitHubにアップロードして公開する",
+      "relatedTerms": ["Git", "リポジトリ", "プッシュ", "プルリクエスト"]
+    },
+    {
+      "term": "リポジトリ",
+      "reading": "リポジトリ",
+      "category": "バージョン管理",
+      "description": "プロジェクトのファイルや変更履歴をまとめて保管する場所。「リポジトリ = プロジェクトの保管庫」と覚えるとよい。",
+      "example": "GitHubで新しいリポジトリを作成してプロジェクトを管理",
+      "relatedTerms": ["Git", "GitHub", "クローン"]
+    },
+    {
+      "term": "コミット",
+      "reading": "コミット",
+      "category": "Git",
+      "description": "ファイルの変更を記録すること。セーブポイントを作るイメージ。",
+      "example": "git commit -m \"ログイン機能を追加\"",
+      "relatedTerms": ["Git", "プッシュ", "ステージング"]
+    },
+    {
+      "term": "プッシュ",
+      "reading": "プッシュ",
+      "category": "Git",
+      "description": "ローカル（自分のPC）の変更をリモート（GitHub等）に送信すること。",
+      "example": "git push でGitHubに変更をアップロード",
+      "relatedTerms": ["プル", "コミット", "リモート"]
+    },
+    {
+      "term": "プル",
+      "reading": "プル",
+      "category": "Git",
+      "description": "リモート（GitHub等）の最新の変更をローカル（自分のPC）に取り込むこと。",
+      "example": "git pull で最新のコードをダウンロード",
+      "relatedTerms": ["プッシュ", "フェッチ", "リモート"]
+    },
+    {
+      "term": "デプロイ",
+      "reading": "デプロイ",
+      "category": "デプロイ",
+      "description": "作ったアプリを本番環境（インターネット上）に公開すること。",
+      "example": "Vercelにデプロイして誰でもアクセスできるようにする",
+      "relatedTerms": ["本番環境", "ビルド", "リリース"]
+    },
+    {
+      "term": "npm",
+      "reading": "エヌピーエム",
+      "category": "パッケージ管理",
+      "description": "Node Package Manager。JavaScriptのライブラリ（パッケージ）を管理するツール。",
+      "example": "npm install react でReactをインストール",
+      "relatedTerms": ["yarn", "pnpm", "package.json", "node_modules"]
+    },
+    {
+      "term": "package.json",
+      "reading": "パッケージドットジェイソン",
+      "category": "パッケージ管理",
+      "description": "プロジェクトで使うライブラリ（依存関係）やスクリプトを記録するファイル。",
+      "example": "package.jsonに記録されたライブラリをnpm installで一括インストール",
+      "relatedTerms": ["npm", "dependencies", "node_modules"]
+    },
+    {
+      "term": "node_modules",
+      "reading": "ノードモジュールズ",
+      "category": "パッケージ管理",
+      "description": "npm installでインストールしたライブラリが保存されるフォルダ。容量が大きいのでGitには含めない。",
+      "example": "node_modulesフォルダは.gitignoreに追加して除外する",
+      "relatedTerms": ["npm", "package.json", ".gitignore"]
+    },
+    {
+      "term": "API",
+      "reading": "エーピーアイ",
+      "category": "Web開発",
+      "description": "Application Programming Interface。アプリ同士が情報をやりとりするための窓口。",
+      "example": "天気APIを使って天気情報を取得する",
+      "relatedTerms": ["REST", "エンドポイント", "JSON"]
+    },
+    {
+      "term": "エンドポイント",
+      "reading": "エンドポイント",
+      "category": "Web開発",
+      "description": "APIにアクセスするためのURL。特定の機能にアクセスする入口。",
+      "example": "/api/users がユーザー情報を取得するエンドポイント",
+      "relatedTerms": ["API", "ルート", "パス"]
+    },
+    {
+      "term": "環境変数",
+      "reading": "かんきょうへんすう",
+      "category": "設定",
+      "description": "APIキーやパスワードなど、公開したくない情報を保存する場所。.envファイルに記述する。",
+      "example": "DATABASE_URL=xxx のように.envファイルに記述",
+      "relatedTerms": [".env", "シークレット", "設定"]
+    },
+    {
+      "term": ".env",
+      "reading": "ドットイーエヌブイ",
+      "category": "設定",
+      "description": "環境変数を記述するファイル。絶対にGitHubにアップロードしてはいけない。",
+      "example": ".gitignoreに.envを追加して除外する",
+      "relatedTerms": ["環境変数", ".gitignore", "設定"]
+    },
+    {
+      "term": "localhost",
+      "reading": "ローカルホスト",
+      "category": "開発",
+      "description": "自分のPC内で動いているサーバーのアドレス。開発中に使う。",
+      "example": "http://localhost:3000 でローカル開発サーバーにアクセス",
+      "relatedTerms": ["開発サーバー", "ポート番号", "127.0.0.1"]
+    },
+    {
+      "term": "ポート番号",
+      "reading": "ポートばんごう",
+      "category": "開発",
+      "description": "サーバーの窓口番号のようなもの。複数のアプリを同時に動かすために使う。",
+      "example": "3000番ポートでReactアプリ、5000番ポートでAPIサーバーを起動",
+      "relatedTerms": ["localhost", "開発サーバー"]
+    },
+    {
+      "term": "ビルド",
+      "reading": "ビルド",
+      "category": "開発",
+      "description": "開発中のコードを本番用に最適化して変換すること。",
+      "example": "npm run build で本番用のファイルを生成",
+      "relatedTerms": ["デプロイ", "トランスパイル", "バンドル"]
+    },
+    {
+      "term": "TypeScript",
+      "reading": "タイプスクリプト",
+      "category": "言語",
+      "description": "JavaScriptに型の概念を追加した言語。エラーを事前に見つけやすくなる。",
+      "example": "const name: string = '太郎' のように型を指定",
+      "relatedTerms": ["JavaScript", "型安全", "tsc"]
+    },
+    {
+      "term": "Prisma",
+      "reading": "プリズマ",
+      "category": "データベース",
+      "description": "TypeScript/JavaScript用のORM（データベース操作ツール）。型安全にデータベースを操作できる。",
+      "example": "prisma.user.findMany() でユーザー一覧を取得",
+      "relatedTerms": ["ORM", "データベース", "SQL", "マイグレーション"]
+    },
+    {
+      "term": "ORM",
+      "reading": "オーアールエム",
+      "category": "データベース",
+      "description": "Object-Relational Mapping。プログラムのコードでデータベースを操作できるようにする仕組み。SQLを直接書かなくても良い。",
+      "example": "PrismaやTypeORMがORMの例",
+      "relatedTerms": ["Prisma", "データベース", "SQL"]
+    },
+    {
+      "term": "データベース",
+      "reading": "データベース",
+      "category": "データベース",
+      "description": "データを整理して保存する場所。ユーザー情報や投稿内容などを保存する。",
+      "example": "PostgreSQLやMySQLがデータベースの例",
+      "relatedTerms": ["SQL", "Prisma", "テーブル"]
+    },
+    {
+      "term": "SQL",
+      "reading": "エスキューエル",
+      "category": "データベース",
+      "description": "データベースを操作するための言語。データの取得・追加・更新・削除ができる。",
+      "example": "SELECT * FROM users でユーザー一覧を取得",
+      "relatedTerms": ["データベース", "ORM", "クエリ"]
+    },
+    {
+      "term": "マイグレーション",
+      "reading": "マイグレーション",
+      "category": "データベース",
+      "description": "データベースの構造を変更すること。テーブルの追加やカラムの変更など。",
+      "example": "prisma migrate dev で開発環境のデータベースを更新",
+      "relatedTerms": ["Prisma", "スキーマ", "データベース"]
+    },
+    {
+      "term": "スキーマ",
+      "reading": "スキーマ",
+      "category": "データベース",
+      "description": "データベースの設計図。どんなテーブルがあって、どんなデータが入るかを定義する。",
+      "example": "schema.prismaファイルでデータベース構造を定義",
+      "relatedTerms": ["Prisma", "データベース", "マイグレーション"]
+    },
+    {
+      "term": "REST",
+      "reading": "レスト",
+      "category": "Web開発",
+      "description": "RESTful API。Web APIの設計方法の一つ。GETでデータ取得、POSTでデータ作成など、HTTPメソッドで操作を表現する。",
+      "example": "GET /api/users でユーザー一覧を取得",
+      "relatedTerms": ["API", "HTTP", "エンドポイント"]
+    },
+    {
+      "term": "JSON",
+      "reading": "ジェイソン",
+      "category": "Web開発",
+      "description": "JavaScript Object Notation。データをやりとりする時の形式。{\"name\": \"太郎\"} のような形。",
+      "example": "APIのレスポンスは通常JSON形式",
+      "relatedTerms": ["API", "オブジェクト", "データ"]
+    },
+    {
+      "term": "npm install",
+      "reading": "エヌピーエム インストール",
+      "category": "コマンド",
+      "description": "パッケージをインストールするコマンド。package.jsonに書かれた依存関係をすべてインストールする。",
+      "example": "npm install で依存関係を一括インストール / npm install react で個別にインストール",
+      "relatedTerms": ["npm", "package.json", "node_modules"]
+    },
+    {
+      "term": "npm run",
+      "reading": "エヌピーエム ラン",
+      "category": "コマンド",
+      "description": "package.jsonのscriptsセクションに定義されたスクリプトを実行するコマンド。",
+      "example": "npm run dev で開発サーバー起動 / npm run build でビルド実行",
+      "relatedTerms": ["npm", "package.json", "スクリプト"]
+    },
+    {
+      "term": "git clone",
+      "reading": "ギット クローン",
+      "category": "コマンド",
+      "description": "リモートリポジトリを自分のPCにコピーしてくるコマンド。",
+      "example": "git clone https://github.com/user/repo.git",
+      "relatedTerms": ["Git", "GitHub", "リポジトリ"]
+    },
+    {
+      "term": "git add",
+      "reading": "ギット アド",
+      "category": "コマンド",
+      "description": "変更したファイルをステージング（コミット準備）するコマンド。",
+      "example": "git add . で全ファイルをステージング / git add index.html で個別にステージング",
+      "relatedTerms": ["Git", "コミット", "ステージング"]
+    },
+    {
+      "term": "git commit",
+      "reading": "ギット コミット",
+      "category": "コマンド",
+      "description": "ステージングした変更を記録（コミット）するコマンド。",
+      "example": "git commit -m \"メッセージ\" で変更を記録",
+      "relatedTerms": ["Git", "コミット", "git add"]
+    },
+    {
+      "term": "git push",
+      "reading": "ギット プッシュ",
+      "category": "コマンド",
+      "description": "ローカルの変更をリモートリポジトリに送信するコマンド。",
+      "example": "git push でGitHubにアップロード",
+      "relatedTerms": ["Git", "プッシュ", "GitHub"]
+    },
+    {
+      "term": "git pull",
+      "reading": "ギット プル",
+      "category": "コマンド",
+      "description": "リモートリポジトリの最新変更を取得するコマンド。",
+      "example": "git pull で最新のコードをダウンロード",
+      "relatedTerms": ["Git", "プル", "GitHub"]
+    },
+    {
+      "term": "git status",
+      "reading": "ギット ステータス",
+      "category": "コマンド",
+      "description": "現在の変更状況を確認するコマンド。何が変更されているか、ステージングされているかを表示。",
+      "example": "git status で現在の状態を確認",
+      "relatedTerms": ["Git", "ステージング"]
+    },
+    {
+      "term": "cd",
+      "reading": "シーディー",
+      "category": "コマンド",
+      "description": "Change Directory。ディレクトリ（フォルダ）を移動するコマンド。",
+      "example": "cd project で project フォルダに移動 / cd .. で一つ上のフォルダに戻る",
+      "relatedTerms": ["ターミナル", "pwd", "ls"]
+    },
+    {
+      "term": "ls",
+      "reading": "エルエス",
+      "category": "コマンド",
+      "description": "List。現在のディレクトリ内のファイルとフォルダを一覧表示するコマンド。",
+      "example": "ls でファイル一覧を表示 / ls -la で詳細情報も表示",
+      "relatedTerms": ["ターミナル", "cd", "pwd"]
+    },
+    {
+      "term": "pwd",
+      "reading": "ピーダブリューディー",
+      "category": "コマンド",
+      "description": "Print Working Directory。今いる場所（ディレクトリのパス）を表示するコマンド。",
+      "example": "pwd で現在の場所を確認",
+      "relatedTerms": ["ターミナル", "cd", "ls"]
+    },
+    {
+      "term": "mkdir",
+      "reading": "エムケーディーアール",
+      "category": "コマンド",
+      "description": "Make Directory。新しいフォルダを作成するコマンド。",
+      "example": "mkdir new-folder で new-folder という名前のフォルダを作成",
+      "relatedTerms": ["ターミナル", "cd"]
+    },
+    {
+      "term": "rm",
+      "reading": "アールエム",
+      "category": "コマンド",
+      "description": "Remove。ファイルやフォルダを削除するコマンド。注意：削除すると戻せない！",
+      "example": "rm file.txt でファイル削除 / rm -rf folder でフォルダごと削除（危険！）",
+      "relatedTerms": ["ターミナル", "危険なコマンド"]
+    },
+    {
+      "term": "cat",
+      "reading": "キャット",
+      "category": "コマンド",
+      "description": "ファイルの中身を表示するコマンド。",
+      "example": "cat README.md でファイルの中身を表示",
+      "relatedTerms": ["ターミナル", "less", "more"]
+    },
+    {
+      "term": "code .",
+      "reading": "コード ドット",
+      "category": "コマンド",
+      "description": "VS Codeで現在のフォルダを開くコマンド。",
+      "example": "code . でVS Codeを起動",
+      "relatedTerms": ["VS Code", "エディタ"]
+    },
+    {
+      "term": "Bash",
+      "reading": "バッシュ",
+      "category": "ターミナル",
+      "description": "ターミナルで使われているシェルの一種。コマンドを解釈して実行する。Mac/Linuxではデフォルトで使われている。",
+      "example": "ターミナルを開くとBashが起動している",
+      "relatedTerms": ["ターミナル", "シェル", "CLI", "zsh"]
+    },
+    {
+      "term": "シェル",
+      "reading": "シェル",
+      "category": "ターミナル",
+      "description": "ユーザーとOSの間を仲介するプログラム。コマンドを入力すると、OSに伝えて実行してくれる。",
+      "example": "BashやZshがシェルの例",
+      "relatedTerms": ["Bash", "ターミナル", "CLI", "zsh"]
+    },
+    {
+      "term": "npm run dev",
+      "reading": "エヌピーエム ラン デブ",
+      "category": "コマンド",
+      "description": "開発サーバーを起動するコマンド。ファイルを変更すると自動でリロードしてくれる。",
+      "example": "npm run dev でローカル開発サーバー起動 → http://localhost:3000 で確認",
+      "relatedTerms": ["npm run", "開発サーバー", "localhost", "ホットリロード"]
+    },
+    {
+      "term": "npm run build",
+      "reading": "エヌピーエム ラン ビルド",
+      "category": "コマンド",
+      "description": "本番用にアプリをビルド（最適化）するコマンド。デプロイ前に実行する。",
+      "example": "npm run build で本番用ファイルを生成",
+      "relatedTerms": ["npm run", "ビルド", "デプロイ"]
+    },
+    {
+      "term": "npm start",
+      "reading": "エヌピーエム スタート",
+      "category": "コマンド",
+      "description": "アプリを起動するコマンド。通常はビルド済みのアプリを本番モードで起動する。",
+      "example": "npm start でアプリ起動",
+      "relatedTerms": ["npm run", "本番環境"]
+    },
+    {
+      "term": "ホットリロード",
+      "reading": "ホットリロード",
+      "category": "開発",
+      "description": "ファイルを保存すると自動でブラウザがリロードされる機能。開発時に便利。",
+      "example": "npm run dev で起動すると、コードを変更するたびに自動でブラウザが更新される",
+      "relatedTerms": ["npm run dev", "開発サーバー", "HMR"]
+    },
+    {
+      "term": "zsh",
+      "reading": "ズィーシェル",
+      "category": "ターミナル",
+      "description": "Bashの進化版シェル。より便利な機能が追加されている。最新のMacではデフォルト。",
+      "example": "Macのターミナルを開くとzshが起動する",
+      "relatedTerms": ["Bash", "シェル", "ターミナル"]
+    },
+    {
+      "term": "PostgreSQL",
+      "reading": "ポストグレスキューエル",
+      "category": "データベース",
+      "description": "オープンソースのリレーショナルデータベース。信頼性が高く、大規模なアプリでもよく使われる。",
+      "example": "SupabaseはPostgreSQLを使っている",
+      "relatedTerms": ["データベース", "SQL", "MySQL", "Supabase"]
+    },
+    {
+      "term": "MySQL",
+      "reading": "マイエスキューエル",
+      "category": "データベース",
+      "description": "世界中で使われているオープンソースのデータベース。Webアプリでよく使われる。",
+      "example": "WordPressはMySQLを使っている",
+      "relatedTerms": ["データベース", "SQL", "PostgreSQL"]
+    },
+    {
+      "term": "MongoDB",
+      "reading": "モンゴディービー",
+      "category": "データベース",
+      "description": "NoSQLデータベースの一つ。JSONのような形式でデータを保存できる。柔軟な構造が特徴。",
+      "example": "{ name: '太郎', age: 20 } のような形式でデータを保存",
+      "relatedTerms": ["データベース", "NoSQL", "JSON"]
+    },
+    {
+      "term": "NoSQL",
+      "reading": "ノーエスキューエル",
+      "category": "データベース",
+      "description": "SQLを使わないデータベースの総称。柔軟なデータ構造が特徴。MongoDBやFirestoreなど。",
+      "example": "スキーマが固定されていないので、後から項目を追加しやすい",
+      "relatedTerms": ["MongoDB", "Firestore", "データベース"]
+    },
+    {
+      "term": "テーブル",
+      "reading": "テーブル",
+      "category": "データベース",
+      "description": "データベース内でデータを格納する表。Excelのシートのようなもの。",
+      "example": "usersテーブルにユーザー情報を保存、postsテーブルに投稿を保存",
+      "relatedTerms": ["データベース", "カラム", "レコード"]
+    },
+    {
+      "term": "カラム",
+      "reading": "カラム",
+      "category": "データベース",
+      "description": "テーブルの列。データの項目のこと。「フィールド」とも呼ぶ。",
+      "example": "usersテーブルに name、email、password のカラムを作成",
+      "relatedTerms": ["テーブル", "レコード", "データベース"]
+    },
+    {
+      "term": "レコード",
+      "reading": "レコード",
+      "category": "データベース",
+      "description": "テーブルの行。1件のデータのこと。「行」や「ロウ」とも呼ぶ。",
+      "example": "usersテーブルに新しいユーザーのレコードを追加",
+      "relatedTerms": ["テーブル", "カラム", "データベース"]
+    },
+    {
+      "term": "主キー",
+      "reading": "しゅキー",
+      "category": "データベース",
+      "description": "Primary Key。各レコードを一意に識別するためのカラム。通常はidを使う。",
+      "example": "id が主キー。1, 2, 3... と自動で番号が振られる",
+      "relatedTerms": ["テーブル", "外部キー", "データベース"]
+    },
+    {
+      "term": "外部キー",
+      "reading": "がいぶキー",
+      "category": "データベース",
+      "description": "Foreign Key。他のテーブルの主キーを参照するカラム。テーブル同士を関連付ける。",
+      "example": "postsテーブルの user_id が usersテーブルの id を参照",
+      "relatedTerms": ["主キー", "テーブル", "リレーション"]
+    },
+    {
+      "term": "クエリ",
+      "reading": "クエリ",
+      "category": "データベース",
+      "description": "データベースへの問い合わせや操作のこと。SQLで書かれる。",
+      "example": "SELECT * FROM users でユーザー一覧を取得するクエリ",
+      "relatedTerms": ["SQL", "データベース"]
+    },
+    {
+      "term": "SELECT",
+      "reading": "セレクト",
+      "category": "データベース",
+      "description": "SQLでデータを取得するコマンド。最もよく使う。",
+      "example": "SELECT * FROM users WHERE age > 20 で20歳以上のユーザーを取得",
+      "relatedTerms": ["SQL", "クエリ", "INSERT", "UPDATE"]
+    },
+    {
+      "term": "INSERT",
+      "reading": "インサート",
+      "category": "データベース",
+      "description": "SQLで新しいデータを追加するコマンド。",
+      "example": "INSERT INTO users (name, email) VALUES ('太郎', 'taro@example.com')",
+      "relatedTerms": ["SQL", "SELECT", "UPDATE", "DELETE"]
+    },
+    {
+      "term": "UPDATE",
+      "reading": "アップデート",
+      "category": "データベース",
+      "description": "SQLで既存のデータを更新するコマンド。",
+      "example": "UPDATE users SET age = 21 WHERE id = 1 でIDが1のユーザーの年齢を更新",
+      "relatedTerms": ["SQL", "SELECT", "INSERT", "DELETE"]
+    },
+    {
+      "term": "DELETE",
+      "reading": "デリート",
+      "category": "データベース",
+      "description": "SQLでデータを削除するコマンド。注意：戻せない！",
+      "example": "DELETE FROM users WHERE id = 1 でIDが1のユーザーを削除",
+      "relatedTerms": ["SQL", "SELECT", "INSERT", "UPDATE"]
+    },
+    {
+      "term": "インデックス",
+      "reading": "インデックス",
+      "category": "データベース",
+      "description": "データベースの検索を高速化するための仕組み。本の索引のようなもの。",
+      "example": "emailカラムにインデックスを貼ると、メールアドレスでの検索が速くなる",
+      "relatedTerms": ["データベース", "パフォーマンス", "クエリ"]
+    },
+    {
+      "term": "トランザクション",
+      "reading": "トランザクション",
+      "category": "データベース",
+      "description": "複数の処理をひとまとめにして、全部成功するか全部失敗するかのどちらかにする仕組み。",
+      "example": "銀行振込で、Aさんの残高を減らしてBさんの残高を増やす処理を一緒に実行",
+      "relatedTerms": ["データベース", "ACID", "コミット"]
+    },
+    {
+      "term": "リレーション",
+      "reading": "リレーション",
+      "category": "データベース",
+      "description": "テーブル同士の関連付け。「ユーザー」と「投稿」のように、データを関連付ける。",
+      "example": "1人のユーザーが複数の投稿を持つ（1対多の関係）",
+      "relatedTerms": ["外部キー", "テーブル", "データベース"]
+    },
+    {
+      "term": "Supabase",
+      "reading": "スパベース",
+      "category": "データベース",
+      "description": "PostgreSQLベースのバックエンドサービス。Firebaseの代替として人気。認証やデータベースが簡単に使える。",
+      "example": "Supabaseを使えば、サーバーを立てなくてもDBと認証が使える",
+      "relatedTerms": ["PostgreSQL", "Firebase", "BaaS"]
+    },
+    {
+      "term": "Firebase",
+      "reading": "ファイアベース",
+      "category": "データベース",
+      "description": "Googleが提供するバックエンドサービス。データベース、認証、ホスティングなどが使える。",
+      "example": "Firebaseを使えば、バックエンドを書かなくてもアプリが作れる",
+      "relatedTerms": ["Firestore", "NoSQL", "Supabase"]
+    },
+    {
+      "term": "Vercel",
+      "reading": "ヴァーセル",
+      "category": "デプロイ",
+      "description": "Next.jsを作った会社が提供するホスティングサービス。無料プランあり。GitHubと連携して自動デプロイできる。",
+      "example": "VercelにデプロイするとHTTPSで公開できる",
+      "relatedTerms": ["Next.js", "デプロイ", "Netlify", "ホスティング"]
+    },
+    {
+      "term": "Netlify",
+      "reading": "ネトリファイ",
+      "category": "デプロイ",
+      "description": "静的サイトのホスティングサービス。無料プランあり。GitHubと連携して自動デプロイできる。",
+      "example": "ReactやVueのアプリをNetlifyにデプロイ",
+      "relatedTerms": ["Vercel", "デプロイ", "ホスティング"]
+    },
+    {
+      "term": "Render",
+      "reading": "レンダー",
+      "category": "デプロイ",
+      "description": "Webアプリやデータベースをホスティングできるサービス。無料プランあり。Herokuの代替として人気。",
+      "example": "Node.jsアプリとPostgreSQLをRenderでホスティング",
+      "relatedTerms": ["デプロイ", "Heroku", "ホスティング"]
+    },
+    {
+      "term": "Heroku",
+      "reading": "ヘロク",
+      "category": "デプロイ",
+      "description": "老舗のPaaS（Platform as a Service）。簡単にアプリをデプロイできるが、無料プランは廃止された。",
+      "example": "git push heroku main でデプロイできる",
+      "relatedTerms": ["PaaS", "デプロイ", "Render"]
+    },
+    {
+      "term": "Railway",
+      "reading": "レイルウェイ",
+      "category": "デプロイ",
+      "description": "モダンなPaaS。データベースやアプリを簡単にデプロイできる。無料枠あり。",
+      "example": "RailwayでNode.js + PostgreSQLをデプロイ",
+      "relatedTerms": ["PaaS", "デプロイ", "Render"]
+    },
+    {
+      "term": "Cloudflare Pages",
+      "reading": "クラウドフレア ペイジーズ",
+      "category": "デプロイ",
+      "description": "Cloudflareが提供する静的サイトホスティング。無料で高速。",
+      "example": "Cloudflare PagesにNext.jsアプリをデプロイ",
+      "relatedTerms": ["Vercel", "Netlify", "デプロイ"]
+    },
+    {
+      "term": "GitHub Pages",
+      "reading": "ギットハブ ペイジーズ",
+      "category": "デプロイ",
+      "description": "GitHubが提供する静的サイトホスティング。無料。リポジトリから直接公開できる。",
+      "example": "GitHub Pagesでポートフォリオサイトを公開",
+      "relatedTerms": ["GitHub", "デプロイ", "静的サイト"]
+    },
+    {
+      "term": "PaaS",
+      "reading": "パース",
+      "category": "デプロイ",
+      "description": "Platform as a Service。インフラを気にせずアプリをデプロイできるサービス。HerokuやRenderなど。",
+      "example": "PaaSを使えば、サーバー設定なしでアプリを公開できる",
+      "relatedTerms": ["Heroku", "Render", "Railway"]
+    },
+    {
+      "term": "ホスティング",
+      "reading": "ホスティング",
+      "category": "デプロイ",
+      "description": "Webサイトやアプリをインターネット上で公開できるようにするサービス。",
+      "example": "Vercelでホスティングすると、誰でもアクセスできる",
+      "relatedTerms": ["デプロイ", "Vercel", "Netlify"]
+    },
+    {
+      "term": "AWS",
+      "reading": "エーダブリューエス",
+      "category": "クラウド",
+      "description": "Amazon Web Services。Amazonが提供するクラウドサービス。サーバー、データベース、ストレージなど何でもある。",
+      "example": "大規模なアプリはAWSで構築することが多い",
+      "relatedTerms": ["クラウド", "EC2", "S3", "GCP", "Azure"]
+    },
+    {
+      "term": "GCP",
+      "reading": "ジーシーピー",
+      "category": "クラウド",
+      "description": "Google Cloud Platform。Googleが提供するクラウドサービス。機械学習やビッグデータに強い。",
+      "example": "GCPのCloud Runでコンテナをデプロイ",
+      "relatedTerms": ["クラウド", "AWS", "Azure", "Firebase"]
+    },
+    {
+      "term": "Azure",
+      "reading": "アジュール",
+      "category": "クラウド",
+      "description": "Microsoft Azure。Microsoftが提供するクラウドサービス。企業向けが強い。",
+      "example": "AzureでWindowsアプリをホスティング",
+      "relatedTerms": ["クラウド", "AWS", "GCP"]
+    },
+    {
+      "term": "Docker",
+      "reading": "ドッカー",
+      "category": "デプロイ",
+      "description": "アプリを「コンテナ」という箱に入れて、どこでも同じように動かせる技術。",
+      "example": "Dockerを使えば、開発環境と本番環境を同じにできる",
+      "relatedTerms": ["コンテナ", "デプロイ", "Kubernetes"]
+    },
+    {
+      "term": "CI/CD",
+      "reading": "シーアイシーディー",
+      "category": "デプロイ",
+      "description": "Continuous Integration / Continuous Deployment。コードをプッシュしたら自動でテスト・デプロイする仕組み。",
+      "example": "GitHub Actionsを使ってCI/CDを構築",
+      "relatedTerms": ["GitHub Actions", "デプロイ", "自動化"]
+    },
+    {
+      "term": "GitHub Actions",
+      "reading": "ギットハブ アクションズ",
+      "category": "デプロイ",
+      "description": "GitHubが提供する自動化ツール。テスト、ビルド、デプロイを自動化できる。",
+      "example": "GitHub Actionsでプッシュ時に自動テストを実行",
+      "relatedTerms": ["CI/CD", "GitHub", "自動化"]
+    },
+    {
+      "term": "ドメイン",
+      "reading": "ドメイン",
+      "category": "デプロイ",
+      "description": "Webサイトの住所。example.com のような名前。",
+      "example": "独自ドメインを取得してVercelに設定",
+      "relatedTerms": ["DNS", "ホスティング", "URL"]
+    },
+    {
+      "term": "DNS",
+      "reading": "ディーエヌエス",
+      "category": "デプロイ",
+      "description": "Domain Name System。ドメイン名をIPアドレスに変換する仕組み。",
+      "example": "DNSを設定して独自ドメインを使えるようにする",
+      "relatedTerms": ["ドメイン", "ホスティング"]
+    },
+    {
+      "term": "SSL/TLS",
+      "reading": "エスエスエル ティーエルエス",
+      "category": "デプロイ",
+      "description": "通信を暗号化する技術。HTTPSにするために必要。VercelやNetlifyは自動で設定してくれる。",
+      "example": "SSL証明書があるとURLが https:// になる",
+      "relatedTerms": ["HTTPS", "セキュリティ", "デプロイ"]
+    },
+    {
+      "term": "Build Command",
+      "reading": "ビルド コマンド",
+      "category": "デプロイ設定",
+      "description": "アプリをビルド（本番用に変換）するコマンド。Renderなどのデプロイ時に指定する。",
+      "example": "npm run build や npm install など",
+      "relatedTerms": ["Start Command", "デプロイ", "ビルド"]
+    },
+    {
+      "term": "Start Command",
+      "reading": "スタート コマンド",
+      "category": "デプロイ設定",
+      "description": "アプリを起動するコマンド。Renderなどのデプロイ時に指定する。",
+      "example": "npm start や node index.js など",
+      "relatedTerms": ["Build Command", "デプロイ"]
+    },
+    {
+      "term": "Root Directory",
+      "reading": "ルート ディレクトリ",
+      "category": "デプロイ設定",
+      "description": "アプリのメインフォルダ。モノレポの場合に指定する。通常は空白でOK。",
+      "example": "webフォルダをデプロイしたい場合は「web」と指定",
+      "relatedTerms": ["デプロイ", "ディレクトリ"]
+    },
+    {
+      "term": "Branch",
+      "reading": "ブランチ",
+      "category": "デプロイ設定",
+      "description": "デプロイ元のGitブランチ。通常は「main」か「master」。",
+      "example": "mainブランチにプッシュすると自動デプロイ",
+      "relatedTerms": ["Git", "Auto-Deploy", "デプロイ"]
+    },
+    {
+      "term": "Auto-Deploy",
+      "reading": "オートデプロイ",
+      "category": "デプロイ設定",
+      "description": "GitHubにプッシュしたら自動でデプロイする機能。通常はONにする。",
+      "example": "Auto-DeployをONにすると、コードをプッシュするだけで公開される",
+      "relatedTerms": ["CI/CD", "デプロイ", "Branch"]
+    },
+    {
+      "term": "Health Check Path",
+      "reading": "ヘルスチェック パス",
+      "category": "デプロイ設定",
+      "description": "アプリが正常に動いているか確認するためのURL。通常は「/」でOK。",
+      "example": "/ にアクセスして200が返ればOK",
+      "relatedTerms": ["デプロイ", "API", "エンドポイント"]
+    },
+    {
+      "term": "Region",
+      "reading": "リージョン",
+      "category": "デプロイ設定",
+      "description": "サーバーを置く地域。ユーザーから近い方が速い。日本ならSingaporeやOregonを選ぶことが多い。",
+      "example": "Renderでは Singapore (Southeast Asia) を選ぶと日本から速い",
+      "relatedTerms": ["デプロイ", "サーバー"]
+    },
+    {
+      "term": "Instance Type",
+      "reading": "インスタンス タイプ",
+      "category": "デプロイ設定",
+      "description": "サーバーのスペック（性能）。Freeは無料だが低スペック。Starterは有料で高性能。",
+      "example": "個人プロジェクトならFreeで十分",
+      "relatedTerms": ["デプロイ", "サーバー", "料金"]
+    },
+    {
+      "term": "Environment",
+      "reading": "エンバイロメント",
+      "category": "デプロイ設定",
+      "description": "実行環境。DockerかNativeか選ぶ。通常はNativeでOK。",
+      "example": "Node.jsアプリならNativeを選ぶ",
+      "relatedTerms": ["Docker", "デプロイ"]
+    },
+    {
+      "term": "Port",
+      "reading": "ポート",
+      "category": "デプロイ設定",
+      "description": "アプリが待ち受けるポート番号。Renderでは環境変数PORTを使う。",
+      "example": "const port = process.env.PORT || 3000 のように書く",
+      "relatedTerms": ["ポート番号", "環境変数", "デプロイ"]
+    },
+    {
+      "term": "Custom Domain",
+      "reading": "カスタム ドメイン",
+      "category": "デプロイ設定",
+      "description": "独自ドメインを設定できる機能。example.comのような自分のドメインを使える。",
+      "example": "myapp.onrender.com → myapp.com に変更",
+      "relatedTerms": ["ドメイン", "DNS", "デプロイ"]
+    },
+    {
+      "term": "Logs",
+      "reading": "ログズ",
+      "category": "デプロイ設定",
+      "description": "アプリの動作記録。エラーが起きた時にログを見て原因を調べる。",
+      "example": "console.log() の内容がログに出力される",
+      "relatedTerms": ["デバッグ", "エラー", "デプロイ"]
+    },
+    {
+      "term": "Deploy Hook",
+      "reading": "デプロイ フック",
+      "category": "デプロイ設定",
+      "description": "特定のURLにアクセスするとデプロイが実行される機能。外部サービスから自動デプロイする時に使う。",
+      "example": "CMSでコンテンツを更新したら自動でサイトを更新",
+      "relatedTerms": ["Webhook", "CI/CD", "デプロイ"]
+    },
+    {
+      "term": "Webhook",
+      "reading": "ウェブフック",
+      "category": "デプロイ設定",
+      "description": "特定のイベントが起きた時に、指定したURLに通知を送る仕組み。",
+      "example": "GitHubにプッシュしたらSlackに通知",
+      "relatedTerms": ["Deploy Hook", "API", "自動化"]
+    },
+    {
+      "term": "Dockerfile",
+      "reading": "ドッカーファイル",
+      "category": "デプロイ設定",
+      "description": "Dockerイメージの設計図。アプリの実行環境を定義するファイル。",
+      "example": "FROM node:18 でNode.js 18を使うと指定",
+      "relatedTerms": ["Docker", "デプロイ", "コンテナ"]
+    },
+    {
+      "term": "Static Site",
+      "reading": "スタティック サイト",
+      "category": "デプロイ",
+      "description": "静的サイト。サーバー処理なしで、HTMLやJSだけで動くサイト。ビルド済みのNext.jsやReactなど。",
+      "example": "npm run build で生成したファイルをそのまま公開",
+      "relatedTerms": ["Vercel", "Netlify", "ホスティング"]
+    },
+    {
+      "term": "Rollback",
+      "reading": "ロールバック",
+      "category": "デプロイ",
+      "description": "デプロイを以前の状態に戻すこと。新しいバージョンで問題が起きた時に使う。",
+      "example": "最新デプロイでバグが出たので、1つ前のバージョンにロールバック",
+      "relatedTerms": ["デプロイ", "バージョン管理"]
+    }
+  ]
+}
